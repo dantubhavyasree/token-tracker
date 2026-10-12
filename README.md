@@ -107,9 +107,6 @@ Each interaction with the LLM becomes one training sample.
 | Input Tokens   | Number of input tokens  |
 | Output Tokens  | Number of output tokens |
 | Prompt Quality | Quality score           |
-| Model          | LLM used                |
-| Response Time  | Time taken              |
-| Timestamp      | Interaction time        |
 
 Example:
 
@@ -165,8 +162,6 @@ Possible Algorithms
 
 * Random Forest
 * XGBoost
-* LightGBM
-* CatBoost
 
 ---
 
@@ -178,7 +173,7 @@ Regression / Classification
 
 Output
 
-* 8.5 / 10
+* 8 / 10
 
 or
 
@@ -192,37 +187,19 @@ or
 # Project Structure
 
 ```text
-LLM-Prompt-Analyzer/
-│
-├── data/
-│   ├── raw/
-│   ├── processed/
-│
-├── data_collection/
-│   ├── collect_data.py
-│   ├── tokenizer.py
-│
-├── feature_engineering/
-│   ├── extractor.py
-│
-├── training/
-│   ├── train_token_model.py
-│   ├── train_quality_model.py
-│
-├── models/
-│   ├── token_model.pkl
-│   ├── quality_model.pkl
-│
-├── inference/
-│   ├── predictor.py
-│
-├── dashboard/
-│   ├── app.py
-│
-├── notebooks/
-│
+token-tracker/
+├── prompts_set1.csv            (or move into data/raw/, see below)
+├── prompts_set2.csv
+├── data_collection/merge_datasets.py
+├── feature_engineering/extractor.py
+├── training/train_token_model.py
+├── training/train_quality_model.py
+├── models/                     (.pkl files are generated, plus result charts)
+├── inference/predictor.py
+├── inference/api.py            (FastAPI server)
+├── dashboard/app.py            (Streamlit app)
+├── extension/                  (Chrome extension)
 ├── requirements.txt
-│
 └── README.md
 ```
 
@@ -235,11 +212,8 @@ LLM-Prompt-Analyzer/
 * NumPy
 * Scikit-learn
 * XGBoost
-* LightGBM
-* CatBoost
-* Streamlit / React
+* Streamlite
 * FastAPI
-* SQLite / PostgreSQL
 
 ---
 
