@@ -9,8 +9,6 @@
 **LLM Prompt Analyzer** is a Machine Learning project that analyzes a user's prompt and predicts how an LLM is likely to respond **without actually sending the prompt to the model**.
 
 The system provides:
-
-- 📊 Expected input tokens
 - 📈 Expected output tokens
 - ⭐ Prompt quality score
 - 💰 Estimated API cost *(Future Feature)*
@@ -282,10 +280,15 @@ Suggestions
 * [ ] Continuous learning pipeline
 
 ---
+# Installation
+pip install -r requirements.txt
+# How to run, in order:
+   python data_collection/merge_datasets.py
+   python training/train_token_model.py
+   python training/train_quality_model.py
+   uvicorn inference.api:app --port 8000
+   streamlit run dashboard/app.py
 
-# Vision
-
-Build an intelligent assistant that evaluates prompts before they reach an LLM, helping developers write clearer, more efficient, and cost-effective prompts while predicting the expected response characteristics using Machine Learning.
 
 ```
 ```
