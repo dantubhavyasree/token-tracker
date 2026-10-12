@@ -283,11 +283,11 @@ Suggestions
 # Installation
 pip install -r requirements.txt
 # How to run, in order:
-   python data_collection/merge_datasets.py
-   python training/train_token_model.py
-   python training/train_quality_model.py
-   uvicorn inference.api:app --port 8000
-   streamlit run dashboard/app.py
+  * python data_collection/merge_datasets.py
+  * python training/train_token_model.py
+  * python training/train_quality_model.py
+  * uvicorn inference.api:app --port 8000
+  * streamlit run dashboard/app.py
 
 
 ```
